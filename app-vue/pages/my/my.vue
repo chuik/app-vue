@@ -3,7 +3,7 @@
 		<view class="beijing"></view>
 		<!-- 页面顶部 -->
 		<view class="header">
-			<image class="settings-icon" src="/static/settings-icon.png"></image>
+			<image  @click="toShezhi" class="settings-icon" src="/static/settings-icon.png"></image>
 		</view>
 
 		<!-- 第一部分 -->
@@ -47,26 +47,26 @@
 		</view>
 		<view style="height: 100px;"></view>
 
-		<!-- 底部导航栏 -->
-		<view class="footer">
-			<view class="bottom-icon">
-				<image src="/static/shouye.png"></image>
-				<text>首页</text>
-			</view>
-			<view class="bottom-icon">
-				<image src="/static/fenlei.png"></image>
-				<text>分类</text>
-			</view>
-			<image class="main-icon" src="/static/kecheng.png"></image>
-			<view class="bottom-icon">
-				<image src="/static/faxian.png"></image>
-				<text>发现</text>
-			</view>
-			<view class="bottom-icon">
-				<image src="/static/wo.png"></image>
-				<text>我的</text>
-			</view>
+	<!-- 底部导航栏 -->
+	<view class="footer">
+		<view class="bottom-icon" @click="gotoPath('../home/home')">
+			<image src="/static/shouye.png"></image>
+			<text>首页</text>
 		</view>
+		<view class="bottom-icon" @click="gotoPath('../goods_cate/goods_cate')">
+			<image src="/static/fenlei.png"></image>
+			<text>分类</text>
+		</view>
+		<image class="main-icon" src="/static/kecheng.png" @click="gotoPath('../zhuye/zhuye')"></image>
+		<view class="bottom-icon" @click="gotoPath('../faxian/faxian')">
+			<image src="/static/faxian.png"></image>
+			<text>发现</text>
+		</view>
+		<view class="bottom-icon" >
+			<image src="/static/wode_xuanz.png"></image>
+			<text>我的</text>
+		</view>
+	</view>
 
 	</view>
 </template>
@@ -146,6 +146,17 @@
 			};
 		},
 		methods: {
+			gotoPath(path){
+				console.log(path);
+				uni.redirectTo({
+					url:path
+				})
+			},
+			toShezhi(){
+				uni.navigateTo({
+					url:"../shezhi/shezhi"
+				})
+			},
 			generateRandomNumber() {
 				return Math.floor(1000000 + Math.random() * 9000000).toString();
 			},
@@ -297,34 +308,5 @@
 		height: 20px;
 	}
 
-	.footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 94%;
-		bottom: 0px;
-		padding: 10px;
-		background-color: #FFFFFF;
-		margin-top: 40px;
-		z-index: 1;
-		position: fixed;
-	}
-
-	.bottom-icon {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		
-	}
-
-	.bottom-icon image {
-		width: 30px;
-		height: 30px;
-	}
-
-	.main-icon {
-		width: 60px;
-		height: 60px;
-		margin: 0 10px;
-	}
+	
 </style>

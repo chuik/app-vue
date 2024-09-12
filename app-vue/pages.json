@@ -177,44 +177,21 @@
 			}
 		},
 		{
-			"path" : "pages/setName/setName",
-			"style" :
-			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": false
-				}
-			}
-		},
-		{
-			"path" : "pages/Bindphonenumber/Bindphonenumber",
-			"style" :
-			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": false
-				}
-			}
-		},
-		{
-			"path" : "pages/ChooseExam/ChooseExam",
+			"path" : "pages/shezhi/shezhi",
 			"style" : 
 			{
-				"navigationBarTitleText" : "选择考试",
-				"enablePullDownRefresh" : false
+				"navigationBarTitleText" : "",
+				"navigationBarBackgroundColor": "#fff",
+				"backgroundColor": "#f6f7f8"
 			}
 		},
 		{
-			"path" : "pages/ChooseExam-one/ChooseExam-one",
-			"style" :
+			"path" : "pages/tiku/tiku",
+			"style" : 
 			{
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false,
-				"app-plus": {
-					"titleNView": false
-				}
+				"navigationBarTitleText" : "菜式题库",
+				"navigationBarBackgroundColor": "#fff",
+				"backgroundColor": "#f6f7f8"
 			}
 		}
 	],

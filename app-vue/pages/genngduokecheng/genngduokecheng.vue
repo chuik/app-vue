@@ -41,21 +41,8 @@
 
 		<!-- 页面内内容 -->
 		<view class="content">
-			
-			<view class="course-info">
-				<image class="course-image" src="/static/course-image.png" />
-				<view class="course-details">
-					<text class="course-title">信息处理技术员</text>
-					<view class="course-price">
-						<image class="price-icon" src="/static/price-icon.png" />
-						<text class="price-amount">￥199</text>
-					</view>
-				</view>
-				<view class="shiting">
-					<image src="../../static/wo.png"></image>
-					<text class="shiting-button">试听</text>
-				</view>
-			</view>
+			<text>当前筛选: {{ selectedClass }} | {{ selectedSubjects.join(', ') }}</text>
+			<!-- 这里根据实际需要渲染内容 -->
 
 		</view>
 	</view>
@@ -170,7 +157,6 @@
 		position: absolute;
 		right: 0px;
 		background-color: #d0d0d0;
-		z-index: 2;
 	}
 
 	.filter-content {
@@ -183,7 +169,6 @@
 		top: 52px;
 		left: 73px;
 		border: 1px solid #ddd;
-		z-index: 3;
 	}
 
 	.filter-title {
@@ -250,73 +235,5 @@
 		/* 可选的额外样式 */
 		padding: 10px;
 		border-radius: 4px;
-	}
-	
-	.content{
-		margin-top: 20px;
-	}
-	
-	.course-info {
-		display: flex;
-		align-items: center;
-		background-color: #fff;
-	}
-	
-	.course-image {
-		width: 80px;
-		height: 80px;
-		margin-right: 10px;
-	}
-	
-	.course-details {
-		flex: 1;
-	}
-	
-	.course-title {
-		font-size: 16px;
-		font-weight: bold;
-		margin-bottom: 5px;
-		margin-left: 15px;
-	}
-	
-	.course-price {
-		display: flex;
-		align-items: center;
-		margin-bottom: 10px;
-	}
-	
-	.price-icon {
-		width: 20px;
-		height: 20px;
-	}
-	
-	.price-amount {
-		font-size: 16px;
-		color: #FF5722;
-		margin-left: 5px;
-		/* 调整价格图标和金额之间的间距 */
-		margin-top: 20px;
-	}
-	
-	.shiting {
-		display: flex;
-		flex-direction: column;
-		/* 垂直排列图标和文本 */
-		align-items: center;
-		/* 水平居中对齐 */
-		margin-right: 20px;
-	}
-	
-	.shiting>image {
-		width: 25px;
-		/* 调整图标的大小 */
-		height: 25px;
-	}
-	
-	.shiting-button {
-		margin-top: 5px;
-		/* 调整文本与图标之间的间距 */
-		font-size: 14px;
-		/* 可选：调整文本大小 */
 	}
 </style>

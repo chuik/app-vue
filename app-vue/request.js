@@ -18,6 +18,11 @@ const request = async (url, method = 'GET', data = null, headers = {"content-typ
 		});
 	});
 };
+
+
+
 uni.$request=request;
-uni.$BaseUrl='http://192.168.31.168:8082/'
+uni.$BaseUrl='http://192.168.31.168:8082/';
+
 export default request;
+

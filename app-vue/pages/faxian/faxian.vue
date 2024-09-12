@@ -35,26 +35,26 @@
 			</view>
 		</view>
 		
-		<!-- 底部导航栏 -->
-		<view class="footer">
-			<view class="bottom-icon">
-				<image src="/static/shouye.png"></image>
-				<text>首页</text>
-			</view>
-			<view class="bottom-icon">
-				<image src="/static/fenlei.png"></image>
-				<text>分类</text>
-			</view>
-			<image class="main-icon" src="/static/kecheng.png"></image>
-			<view class="bottom-icon">
-				<image src="/static/faxian.png"></image>
-				<text>发现</text>
-			</view>
-			<view class="bottom-icon">
-				<image src="/static/wo.png"></image>
-				<text>我的</text>
-			</view>
+	<!-- 底部导航栏 -->
+	<view class="footer">
+		<view class="bottom-icon" @click="gotoPath('../home/home')">
+			<image src="/static/shouye.png"></image>
+			<text>首页</text>
 		</view>
+		<view class="bottom-icon" @click="gotoPath('../goods_cate/goods_cate')">
+			<image src="/static/fenlei.png"></image>
+			<text>分类</text>
+		</view>
+		<image class="main-icon" src="/static/kecheng.png" @click="gotoPath('../zhuye/zhuye')"></image>
+		<view class="bottom-icon" >
+			<image src="/static/faxian_xuanz.png"></image>
+			<text>发现</text>
+		</view>
+		<view class="bottom-icon" @click="gotoPath('../my/my')">
+			<image src="/static/wode.png"></image>
+			<text>我的</text>
+		</view>
+	</view>
 		
 		
 		
@@ -98,6 +98,12 @@
 			}
 		},
 		methods: {
+			gotoPath(path){
+				console.log(path);
+				uni.redirectTo({
+					url:path
+				})
+			},
 			setTab(tab) {
 				this.currentTab = tab;
 			},

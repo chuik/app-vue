@@ -39,7 +39,9 @@
 		<view class="section second-section">
 			<view class="icon-container">
 				<view class="icon-item" v-for="(item, index) in icons" :key="index">
-					<view class="icon-item-1" ><image class="icon-image" :src="item.image"></image></view>
+					<view class="icon-item-1">
+						<image class="icon-image" :src="item.image"></image>
+					</view>
 					<text class="icon-text"><b>{{ item.text }}</b></text>
 				</view>
 			</view>
@@ -63,33 +65,33 @@
 					<text class="list-subtitle">{{ item.subtitle }}</text>
 				</view>
 			</view>
-			
+
 		</view>
-		
-	
-		
-		
+
+
+
+
 		<!-- 底部导航栏 -->
 		<view class="footer">
-			<view class="bottom-icon">
+			<view class="bottom-icon" @click="gotoPath('../home/home')">
 				<image src="/static/shouye.png"></image>
 				<text>首页</text>
 			</view>
-			<view class="bottom-icon">
+			<view class="bottom-icon" @click="gotoPath('../goods_cate/goods_cate')">
 				<image src="/static/fenlei.png"></image>
 				<text>分类</text>
 			</view>
 			<image class="main-icon" src="/static/kecheng.png"></image>
-			<view class="bottom-icon">
+			<view class="bottom-icon" @click="gotoPath('../faxian/faxian')">
 				<image src="/static/faxian.png"></image>
 				<text>发现</text>
 			</view>
 			<view class="bottom-icon">
-				<image src="/static/wo.png"></image>
+				<image src="/static/wode.png" @click="gotoPath('../my/my')"></image>
 				<text>我的</text>
 			</view>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -151,6 +153,14 @@
 				],
 			};
 		},
+		methods:{
+			gotoPath(path){
+				console.log(path);
+				uni.redirectTo({
+					url:path
+				})
+			},
+		}
 	};
 </script>
 
@@ -277,49 +287,54 @@
 	}
 
 	.second-section {
-	    display: flex;
-	    flex-direction: row;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    width: 90%;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 90%;
 		margin-left: 2%;
 		margin-top: 20px;
 		border-radius: 20upx 20upx 20upx 20upx;
 	}
-	
+
 	.icon-container {
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: space-between;
-	    width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
 	}
-	
+
 	.icon-item {
-	    display: flex;
-	    flex-direction: column;
-	    align-items: center;
-	    width: 20%; /* 调整宽度，以确保每行最多显示四个 */
-	    margin-bottom: 20px;
-	    box-sizing: border-box; /* 确保宽度包括内边距和边框 */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 20%;
+		/* 调整宽度，以确保每行最多显示四个 */
+		margin-bottom: 20px;
+		box-sizing: border-box;
+		/* 确保宽度包括内边距和边框 */
 	}
-	.icon-item-1{
+
+	.icon-item-1 {
 		width: 60px;
 		height: 60px;
 		display: flex;
-		align-items: center; /* 垂直居中对齐 */
-		justify-content: center; /* 水平居中对齐 */
+		align-items: center;
+		/* 垂直居中对齐 */
+		justify-content: center;
+		/* 水平居中对齐 */
 		border-radius: 20upx 20upx 20upx 20upx;
 		box-shadow: 0 0 10px rgba(225, 244, 238, 0.9);
 	}
-	
+
 	.icon-image {
-	    width: 50px;
-	    height: 50px;
+		width: 50px;
+		height: 50px;
 	}
-	
+
 	.icon-text {
-	    margin-top: 15px;
-	    font-size: 15px;
+		margin-top: 15px;
+		font-size: 15px;
 	}
 
 
@@ -338,51 +353,56 @@
 	}
 
 	.fourth-section {
-	    display: flex;
-	    flex-wrap: wrap; /* 允许换行 */
-	    gap: 10px; /* 设置元素之间的间距 */
-	    padding: 10px;
-	    justify-content: space-between; /* 确保项目在每行中均匀分布 */
-		margin-bottom: 80px ;
-		
+		display: flex;
+		flex-wrap: wrap;
+		/* 允许换行 */
+		gap: 10px;
+		/* 设置元素之间的间距 */
+		padding: 10px;
+		justify-content: space-between;
+		/* 确保项目在每行中均匀分布 */
+		margin-bottom: 80px;
+
 	}
-	
+
 	.list-item {
-	    display: flex;
-	    align-items: center;
-	    width: calc(50% - 10px); /* 每行两个元素，减去 gap 的一半 */
-	    box-sizing: border-box; /* 确保宽度计算包括内边距和边框 */
+		display: flex;
+		align-items: center;
+		width: calc(50% - 10px);
+		/* 每行两个元素，减去 gap 的一半 */
+		box-sizing: border-box;
+		/* 确保宽度计算包括内边距和边框 */
 		margin-top: 10px;
 		background-color: #ebebeb;
 		height: 150px;
 		border-radius: 20upx 20upx 20upx 20upx;
 	}
-	
+
 	.list-icon {
-	    width: 40px;
-	    height: 40px;
-	    margin-right: 10px;
+		width: 40px;
+		height: 40px;
+		margin-right: 10px;
 		margin-left: 10px;
 	}
-	
+
 	.list-content {
-	    display: flex;
-	    flex-direction: column;
+		display: flex;
+		flex-direction: column;
 	}
-	
+
 	.list-title {
-	    font-size: 16px;
-	    font-weight: bold;
+		font-size: 16px;
+		font-weight: bold;
 		margin-bottom: 15px;
 		margin-left: 5px;
 	}
-	
+
 	.list-subtitle {
-	    font-size: 12px;
-	    color: #666;
+		font-size: 12px;
+		color: #666;
 		margin-left: 5px;
 	}
-	
+
 	.footer {
 		display: flex;
 		justify-content: space-between;
@@ -394,23 +414,22 @@
 		margin-top: 40px;
 		position: fixed;
 	}
-	
+
 	.bottom-icon {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		
+
 	}
-	
+
 	.bottom-icon image {
 		width: 30px;
 		height: 30px;
 	}
-	
+
 	.main-icon {
 		width: 60px;
 		height: 60px;
 		margin: 0 10px;
 	}
-
 </style>

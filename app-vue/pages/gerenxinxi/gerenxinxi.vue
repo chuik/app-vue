@@ -12,15 +12,15 @@
 			<view class="row">
 				<text class="left-text">头像</text>
 				<view class="right-content">
-					<image class="avatar" :src="avatar" />
+					<image class="avatar" src="/static/avatar.png" />
 					<image class="arrow-icon" src="/static/icon0.png" />
 				</view>
 			</view>
 			<!-- 第二行 -->
-			<view class="row" @click="tiaoName">
+			<view class="row">
 				<text class="left-text">用户名</text>
 				<view class="right-content">
-					<text class="username">{{name}}</text>
+					<text class="username">JohnDoe</text>
 					<image class="arrow-icon" src="/static/icon0.png" />
 				</view>
 			</view>
@@ -40,19 +40,18 @@
 		<!-- 第二部分 -->
 		<view class="section">
 			<!-- 第一行 -->
-			<view class="row" @click="gophonenumber">
+			<view class="row">
 				<text class="left-text">绑定手机号</text>
-				<text class="left-text1">{{dsPhone}}</text>
 				<image class="icon" src="/static/icon0.png" />
 			</view>
 			<!-- 第二行 -->
 			<view class="row" @click="password">
-				<text class="left-text">修改密码</text>
+				<text class="left-text">修改手机号</text>
 				<image class="icon" src="/static/icon0.png" />
 			</view>
 		</view>
 
-
+	
 	</view>
 </template>
 
@@ -60,94 +59,26 @@
 	export default {
 		data() {
 			return {
-				name: '',
-				avatar: '',
-				selectedGender: '',
+				selectedGender: '保密',
 				genderOptions: ['男', '女', '保密'],
-				genderIndex: 0,
-				dsPhone: ''
+				genderIndex: 2
 			}
-		},
-		mounted() {
-			console.log("475");
-			uni.$request(
-				'userParam/getUserParam',
-				'get',
-				null, {
-					"content-type": "application/json",
-					"token": uni.getStorageSync('token')
-				}
-			).then(res => {
-				res = res.data
-				if (res.code == 200) {
-					console.log(res.data);
-					this.name = res.data.nickName
-					this.selectedGender = this.genderOptions[res.data.sex];
-					this.genderIndex = res.data.sex;
-					this.dsPhone = res.data.dsPhone;
-					this.avatar = uni.$BaseUrl + "static/" + res.data.avatar;
-				} else {
-					uni.showToast({
-						icon: 'error',
-						title: res.data,
-					});
-				}
-			})
 		},
 		methods: {
 			goBack() {
 				uni.navigateBack();
 			},
 			showGenderPicker() {
-				//this.$refs.genderPicker.open();
+				// this.$refs.genderPicker.open();
 			},
 			onGenderChange(e) {
-				console.log(e.detail.value);
 				this.selectedGender = this.genderOptions[e.detail.value];
 				this.genderIndex = e.detail.value;
-				uni.$request(
-					'userParam/sex/' + this.genderIndex,
-					'get',
-					null, {
-						"content-type": "application/json",
-						"token": uni.getStorageSync('token')
-					}
-				).then(res => {
-					res= res.data
-					if(res.code==200){
-						uni.showToast({
-							icon: 'success',
-							title: res.data,
-						});
-					}else{
-						uni.showToast({
-						icon: 'error',
-						title: res.data,
-					});
-					}
-				})
-
+				console.log(this.genderIndex);
 			},
-			password() {
+			password(){
 				uni.navigateTo({
-					url: "/pages/wangjimima/wangjimima"
-				})
-			},
-			tiaoName() {
-				uni.navigateTo({
-					url: '/pages/setName/setName?name='+this.name
-				})
-			},
-			gophonenumber() {
-				if(this.dsPhone){
-					uni.showToast({
-						icon:'error',
-						title:'已绑定'
-					})
-					return;
-				}
-				uni.navigateTo({
-					url: '/pages/Bindphonenumber/Bindphonenumber'
+					url:"/pages/wangjimima/wangjimima"
 				})
 			}
 		}
@@ -195,17 +126,13 @@
 		margin-left: 20px;
 		font-weight: bold;
 	}
-	.left-text1 {
-		font-size: 16px;
-		margin-left: 37%;
-	}
 
 	.right-content {
 		display: flex;
 		align-items: center;
 	}
 
-
+	.avatar,
 	.icon,
 	.arrow-icon {
 		width: 15px;
@@ -213,18 +140,11 @@
 		margin-left: 10px;
 	}
 
-	.avatar {
-		width: 50px;
-		height: 50px;
-		border-radius: 50px;
-	}
-
 	.username {
 		font-size: 16px;
 		color: #bdbdbd;
 	}
-
-	.gender {
+	.gender{
 		color: #bdbdbd;
 	}
 

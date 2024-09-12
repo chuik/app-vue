@@ -121,7 +121,29 @@
 				</picker>
 			</view>
 		</view>
+		<!-- 底部导航栏 -->
+		<view class="footer">
+			<view class="bottom-icon">
+				<image src="/static/shouye_xuanz.png"></image>
+				<text>首页</text>
+			</view>
+			<view class="bottom-icon" @click="gotoPath('../goods_cate/goods_cate')">
+				<image src="/static/fenlei.png"></image>
+				<text>分类</text>
+			</view>
+			<image class="main-icon" src="/static/kecheng.png" @click="gotoPath('../zhuye/zhuye')"></image>
+			<view class="bottom-icon" @click="gotoPath('../faxian/faxian')">
+				<image src="/static/faxian.png"></image>
+				<text>发现</text>
+			</view>
+			<view class="bottom-icon" @click="gotoPath('../my/my')">
+				<image src="/static/wode.png"></image>
+				<text>我的</text>
+			</view>
+		</view>
 	</view>
+	
+	
 </template>
 
 <script>
@@ -231,6 +253,7 @@
 						comments: 15,
 						image: '/static/image2.jpg'
 					},
+					// Add more items as needed
 				],
 				displayedItems: [],
 				itemsPerPage: 5,
@@ -244,6 +267,12 @@
 			this.loadMore();
 		},
 		methods: {
+			gotoPath(path){
+				console.log(path);
+				uni.redirectTo({
+					url:path
+				})
+			},
 			showTimePicker() {
 				this.showPicker = true;
 			},
@@ -273,9 +302,6 @@
 				// 处理“查看更多”按钮的点击事件
 				console.log('查看更多 clicked');
 				// 你可以在这里添加逻辑，例如跳转到更多课程的页面
-				uni.navigateTo({
-					url:'/pages/genngduokecheng/genngduokecheng'
-				})
 			},
 			completeTask(taskId) {
 				// 处理任务完成的逻辑
@@ -482,7 +508,7 @@
 		color: #FF5722;
 		margin-left: 5px;
 		/* 调整价格图标和金额之间的间距 */
-		margin-top: 20px;
+		margin-top: 10px;
 	}
 
 	.shiting {
@@ -710,5 +736,35 @@
 		text-align: center;
 		padding: 10px;
 		border-radius: 5px;
+	}
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 94%;
+		bottom: 0px;
+		padding: 10px;
+		background-color: #FFFFFF;
+		margin-top: 40px;
+		z-index: 1;
+		position: fixed;
+	}
+	
+	.bottom-icon {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+	}
+	
+	.bottom-icon image {
+		width: 30px;
+		height: 30px;
+	}
+	
+	.main-icon {
+		width: 60px;
+		height: 60px;
+		margin: 0 10px;
 	}
 </style>
