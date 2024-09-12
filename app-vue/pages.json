@@ -1,0 +1,228 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/wangjimima/wangjimima",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+
+		},
+		{
+			"path" : "pages/zhuce/zhuce",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/my/my",
+			"style" : 
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/zhuye/zhuye",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/goods_cate/goods_cate",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/faxian/faxian",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/chat/chat",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/exam/exam",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/home/home",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/gerenxinxi/gerenxinxi",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/searchPage/searchPage",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/xinxi/xinxi",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/genngduokecheng/genngduokecheng",
+			"style" : 
+			{
+				"navigationBarTitleText" : "课程",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/quanbukecheng/quanbukecheng",
+			"style" : 
+			{
+				"navigationBarTitleText" : "全部课程",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/linianzhenti/linianzhenti",
+			"style" : 
+			{
+				"navigationBarTitleText" : "历年真题",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/goumaiyemian/goumaiyemian",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/setName/setName",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/Bindphonenumber/Bindphonenumber",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path" : "pages/ChooseExam/ChooseExam",
+			"style" : 
+			{
+				"navigationBarTitleText" : "选择考试",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/ChooseExam-one/ChooseExam-one",
+			"style" :
+			{
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#ffffff"
+	},
+	"uniIdRouter": {}
+}
